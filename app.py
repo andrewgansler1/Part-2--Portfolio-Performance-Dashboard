@@ -108,3 +108,44 @@ with col6:
     st.metric(label="Portfolio Sharpe", value=f"{portfolio_sharpe:.2f}")
 with col7:
     st.metric(label="Benchmark Sharpe", value=f"{benchmark_sharpe:.2f}")
+
+# ... (your existing code above) ...
+with col7:
+    st.metric(label="Benchmark Sharpe", value=f"{benchmark_sharpe:.2f}")
+
+# 8. Portfolio Interpretation Summary
+st.divider()
+st.subheader("Analysis Summary")
+
+# --- OPTION 1: Static Text (Exactly what you requested) ---
+st.markdown("""
+Based on the metrics above:
+* **Performance:** The portfolio did not outperform the benchmark.
+* **Risk:** The portfolio was more risky (exhibited higher volatility).
+* **Efficiency:** The portfolio was less efficient, generating a lower risk-adjusted return according to the Sharpe ratio.
+""")
+
+# --- OPTION 2: Dynamic Text (Recommended) ---
+# This will automatically check the math and display the correct conclusion as prices change day-to-day.
+# You can use st.warning() or st.error() to give it a highlighted callout box.
+
+"""
+if portfolio_total < benchmark_total:
+    perf_status = "did not outperform the benchmark"
+else:
+    perf_status = "outperformed the benchmark"
+
+if portfolio_vol > benchmark_vol:
+    risk_status = "was more risky (higher volatility)"
+else:
+    risk_status = "was less risky (lower volatility)"
+
+if portfolio_sharpe < benchmark_sharpe:
+    eff_status = "less efficient according to the Sharpe ratio"
+else:
+    eff_status = "more efficient according to the Sharpe ratio"
+
+st.info(f"**Conclusion:** The portfolio {perf_status}, {risk_status}, and was {eff_status}.")
+"""
+
+
