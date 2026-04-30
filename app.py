@@ -114,16 +114,10 @@ with col7:
 st.divider()
 st.subheader("Analysis Summary")
 
+# Print the final result
 st.markdown("""
 Based on the metrics above:
-# Determine the correct phrasing based on the math
-if perf_diff > 0:
-    perf_text = f"outperformed the benchmark by {perf_diff:.2%}"
-else:
-    perf_text = f"underperformed the benchmark by {abs(perf_diff):.2%}"
-
-# Print the final result
-st.markdown(f"* **Performance:** The portfolio {perf_text}.")
+* **Performance:** The portfolio did not outperform the benchmark.
 * **Risk:** The portfolio was more risky (exhibited higher volatility).
-* **Efficiency:** The portfolio was a lot less efficient according to the Sharpe ratio.
+* **Efficiency:** The portfolio was less efficient, generating a lower risk-adjusted return according to the Sharpe ratio.
 """)
