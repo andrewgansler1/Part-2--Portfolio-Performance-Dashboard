@@ -14,7 +14,7 @@ Portfolio = {
     'NFLX': 0.20,
     'BABA': 0.20,
     'GME': 0.15,
-    'PLTR': 0.20 
+    'NVDA': 0.20 
 }
 
 # 3. Define Date Range
