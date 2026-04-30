@@ -109,9 +109,6 @@ with col6:
 with col7:
     st.metric(label="Benchmark Sharpe", value=f"{benchmark_sharpe:.2f}")
 
-# ... (your existing code above) ...
-with col7:
-    st.metric(label="Benchmark Sharpe", value=f"{benchmark_sharpe:.2f}")
 
 # 8. Portfolio Interpretation Summary
 st.divider()
@@ -119,7 +116,7 @@ st.subheader("Analysis Summary")
 
 st.markdown("""
 Based on the metrics above:
-* **Performance:** The portfolio did not outperform the benchmark.
+* **Performance:** The portfolio underperform the benchmark by {perf_diff:.2%}.
 * **Risk:** The portfolio was more risky (exhibited higher volatility).
-* **Efficiency:** The portfolio was less efficient, generating a lower risk-adjusted return according to the Sharpe ratio.
+* **Efficiency:** The portfolio was a lot less efficient according to the Sharpe ratio.
 """)
